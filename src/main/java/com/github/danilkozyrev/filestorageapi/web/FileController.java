@@ -66,7 +66,7 @@ public class FileController {
             @PathVariable("fileId") Long fileId,
             UriComponentsBuilder uriComponentsBuilder) {
         String accessToken = fileService.generateFileAccessToken(fileId);
-        String uriString = uriComponentsBuilder.path("/links/{token}").buildAndExpand(accessToken).toUriString();
+        String uriString = uriComponentsBuilder.path("/tl/{token}").buildAndExpand(accessToken).toUriString();
         return Map.of("link", uriString);
     }
 
